@@ -2,7 +2,9 @@
 
 用于分子性质预测的可学习多尺度热扩散适配器。代码将局部图神经网络与热扩散传播分支结合，并提供 MLP 容量对照和传播机制消融。
 
-![HeatAdapter 方法架构](docs/assets/heatadapter_architecture.svg)
+<p align="center">
+  <img src="docs/assets/heatadapter_architecture.svg" alt="HeatAdapter 方法架构" width="100%">
+</p>
 
 *多尺度热扩散通过门控与局部分子消息传递融合。示意图保留论文中的原始谱截断标注；当前代码默认使用全谱。*
 
