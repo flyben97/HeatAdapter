@@ -4,6 +4,12 @@ Learnable multiscale heat diffusion for molecular property prediction. HeatAdapt
 adds a spectral propagation branch to local molecular graph neural networks and
 combines the two paths through learned gates.
 
+![HeatAdapter architecture](docs/assets/heatadapter_architecture.svg)
+
+*Multiscale heat diffusion and gated fusion with local molecular message passing.
+The schematic retains the manuscript's original spectral cutoff; this release
+uses full spectra by default.*
+
 [中文说明](README.zh-CN.md) · [Data preparation](datasets/README.md) ·
 [Evaluation protocol](docs/protocol.md) · [Release checks](docs/validation.md)
 

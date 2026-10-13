@@ -2,6 +2,10 @@
 
 用于分子性质预测的可学习多尺度热扩散适配器。代码将局部图神经网络与热扩散传播分支结合，并提供 MLP 容量对照和传播机制消融。
 
+![HeatAdapter 方法架构](docs/assets/heatadapter_architecture.svg)
+
+*多尺度热扩散通过门控与局部分子消息传递融合。示意图保留论文中的原始谱截断标注；当前代码默认使用全谱。*
+
 当前发布目录采用已修正的全谱实现。论文中的历史实验使用较早的截断实现，不能把历史精度当作本版代码的验证结果；本版完整对比训练尚待完成。随附示例仅验证程序运行。
 
 ## 安装
@@ -59,17 +63,3 @@ heatadapter-train \
 同一命令可以继续尚未完成的实验。数据、代码或配置变化时，需使用新的输出目录。运行结果包含配置与输入哈希、数据清洗记录、划分记录、验证历史、选中模型、逐分子测试预测和误差指标。
 
 更多模型、机制对照、历史分析工具和输出说明见 [英文 README](README.md) 与 [评估协议](docs/protocol.md)。代码采用 [MIT 许可证](LICENSE)。
-
-## 上传 GitHub
-
-在 GitHub 新建空仓库，然后在本目录执行以下命令，将最后两行中的仓库地址换成实际地址：
-
-```bash
-git init -b main
-git add .
-git commit -m "Initial HeatAdapter release"
-git remote add origin https://github.com/flyben97/HeatAdapter.git
-git push -u origin main
-```
-
-如果使用 GitHub 网页上传，请上传本目录内的文件并保留目录结构。`.gitignore` 已排除数据文件、权重、缓存和运行结果；`.github/workflows/tests.yml` 会在 GitHub 推送和 pull request 后运行 CPU 测试。
