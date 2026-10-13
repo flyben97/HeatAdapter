@@ -1,0 +1,8 @@
+# Versions used for the release checks (Python 3.13, CPU).
+# Install a matching PyTorch CPU/CUDA wheel before installing these requirements.
+numpy==2.1.3
+pandas==2.2.3
+scikit-learn==1.6.1
+rdkit==2025.9.4
+torch==2.10.0
+torch-geometric==2.7.0

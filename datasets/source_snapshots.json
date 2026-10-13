@@ -1,0 +1,37 @@
+[
+  {
+    "dataset": "lipophilicity",
+    "source_path": "datasets/csv/default/logP_lipophilicity.csv",
+    "source_sha256": "aed41590cb30609d51d8e08ad3ff06495a76e80e211358801f596b10da69bacd",
+    "raw_rows": 4200,
+    "final_rows": 4200
+  },
+  {
+    "dataset": "bradley_dpg",
+    "source_path": "datasets/csv/default/melting_point_bradley_double_plus_good.csv",
+    "source_sha256": "cf47c46c90caa80142ec664753474ee33ac557ff3f6be38152aa4a2ecb9ad648",
+    "raw_rows": 3041,
+    "final_rows": 3022
+  },
+  {
+    "dataset": "thermosol",
+    "source_path": "datasets/csv/default/solubility_thermosol.csv",
+    "source_sha256": "7c2b5b326442a231c6b1d52c976a3233cbaee7c4f1ebb02ded8beae66a72411c",
+    "raw_rows": 1763,
+    "final_rows": 1763
+  },
+  {
+    "dataset": "esol",
+    "source_path": "datasets/csv/backup/logS_esol_delaney.csv",
+    "source_sha256": "8c06a76f0c6487d29ab0f903e6a7a7139f189ab3c1178f159c8be8964602f189",
+    "raw_rows": 1128,
+    "final_rows": 1117
+  },
+  {
+    "dataset": "freesolv",
+    "source_path": "datasets/csv/backup/hydration_free_energy_freesolv_sampl.csv",
+    "source_sha256": "ab5895d914ee87cb563bd7b9611e869527bba45bec6b014d34dc495a0f9dcb72",
+    "raw_rows": 642,
+    "final_rows": 642
+  }
+]

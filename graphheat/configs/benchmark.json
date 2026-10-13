@@ -1,0 +1,53 @@
+{
+  "campaign_id": "heatadapter_full_spectrum",
+  "status": "prepared_not_executed_full_campaign",
+  "task": "structure-only molecular regression; extrapolation to unseen nonempty Murcko scaffolds",
+  "datasets": [
+    "lipophilicity",
+    "thermosol",
+    "bradley_dpg",
+    "esol",
+    "freesolv"
+  ],
+  "primary_comparisons": "GCN and GINE full-spectrum heat vs base and MLP on Lipophilicity and ThermoSol (8 contrasts; Holm family)",
+  "limitations": "Endpoints and hypotheses selected after pilot and the historical benchmark audit. New folds do not constitute an untouched external cohort. Lipophilicity and ThermoSol share 1088 molecules.",
+  "split": "five shuffled balanced scaffold-group folds; each molecule tested once; approximately 70/10/20 train/validation/test; acyclic entries grouped by canonical molecule",
+  "split_seed": 20260930,
+  "init_seeds": [
+    104729,
+    130363,
+    155921
+  ],
+  "hidden": 128,
+  "depth": 3,
+  "epochs": 300,
+  "patience": 50,
+  "batch_size": 128,
+  "learning_rates": [
+    0.001,
+    0.0003
+  ],
+  "selection": "same two-candidate validation-only learning-rate budget for each neural family and variant; test evaluated only for selected candidate",
+  "weight_decay": 1e-05,
+  "primary_metric": "molecule-weighted out-of-fold MAE; average per-molecule absolute error over initialization seeds, not error of ensemble prediction",
+  "secondary_metrics": [
+    "RMSE",
+    "scaffold macro MAE",
+    "p90 absolute error",
+    "size strata n<=20 and n>20",
+    "fit time",
+    "per-epoch time",
+    "inference latency"
+  ],
+  "uncertainty": "paired scaffold-cluster bootstrap of unique OOF molecule errors; resample whole scaffolds, preserve molecule weights; conditional on fitted models, not full retraining uncertainty",
+  "mechanism_controls": [
+    "identity kernel, identical gate/projection/residual/dropout",
+    "complete zero-eigenspace projection including disconnected components",
+    "fixed times 0.2/1/5",
+    "one learnable kernel initialized at 1",
+    "unweighted full-spectrum Laplacian",
+    "degeneracy-safe 20-mode cutoff"
+  ],
+  "promotion": "No general superiority or causal diffusion claim unless primary adjusted comparisons and attribution controls support it. Preserve negative results.",
+  "legacy": "jcim_v2_full is retained as exploratory historical evidence; never overwrite or mix with v3"
+}
